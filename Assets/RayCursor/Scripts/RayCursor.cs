@@ -1,4 +1,23 @@
-﻿using System.Collections;
+﻿/* Copyright 2019 Marc Baloup, Géry Casiez, Thomas Pietrzak
+               (Université de Lille, Inria, France)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +26,7 @@ namespace RayCursor
 {
     public enum Mode
     {
-        Manual,
-        SemiAuto,
+        Manual, SemiAuto
     }
 
     public enum TransferFunction
@@ -107,10 +125,10 @@ namespace RayCursor
                 previousClosest = closest;
             }
 
-            if (Input.GetButtonDown("RayCursorSelect") && closest != null)
+            if (GetInputSelect() && closest != null)
             {
                 closest.Select();
-                modes[currentMode].OnSelect();
+                GetCursorMode().OnSelect();
             }
         }
 
@@ -151,6 +169,28 @@ namespace RayCursor
         internal CursorTransferFunction GetCursorTransferFunction()
         {
             return transferFunctions[currentTransfertFunction];
+        }
+
+
+        /**
+         * <summary>Return true only during the frame the selection button is pressed but was not pressed the frame before (like Input.GetButtonDown()).</summary>
+         */
+        internal bool GetInputSelect()
+        {
+            return Input.GetButtonDown("RayCursorSelect");
+        }
+
+        /**
+         * <summary>Return true during all the frames the touchpad is touched.</summary>
+         */
+        internal bool GetInputTouch()
+        {
+            return Input.GetButton("RayCursorTouch");
+        }
+
+        internal float GetInputTouchY()
+        {
+            return Input.GetAxis("RayCursorTouchY");
         }
     }
 
@@ -330,8 +370,8 @@ namespace RayCursor
 
         public void Update()
         {
-            bool currentPadTouch = Input.GetButton("RayCursorTouch");
-            float currentPadY = Input.GetAxis("RayCursorTouchY");
+            bool currentPadTouch = cursorManager.GetInputTouch();
+            float currentPadY = cursorManager.GetInputTouchY();
             float currentTime = Time.time;
             if (!currentPadTouch || !previousPadTouch)
                 ySpeed = 0;
