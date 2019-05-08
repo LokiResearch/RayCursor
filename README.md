@@ -1,7 +1,31 @@
 # RayCursor: A 3D Pointing Facilitation Technique based on Raycasting
 
-This is a Unity Project containing the source code and prefab for the pointing technique RayCursor
-presented in [this paper](https://dx.doi.org/10.1145/3290605.3300331).
+This is a Unity Project containing the source code and prefab for the pointing technique RayCursor.
+
+- If you use libpointing for industrial purposes, please star the project and drop us a line by e-mail to tell us in which application you use it
+
+- If you use libpointing for academic purposes, please cite: Marc Baloup, Thomas Pietrzak & Géry Casiez (2019). RayCursor: A 3D Pointing Facilitation Technique based on Raycasting. In Proceedings of CHI '19. ACM, New York, NY, USA, Paper 101, 12 pages. [DOI](https://doi.org/10.1145/3290605.3300331)
+
+```
+@inproceedings{Baloup:2019:RPF:3290605.3300331,
+ author = {Baloup, Marc and Pietrzak, Thomas and Casiez, G{\'e}ry},
+ title = {RayCursor: A 3D Pointing Facilitation Technique Based on Raycasting},
+ booktitle = {Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems},
+ series = {CHI '19},
+ year = {2019},
+ isbn = {978-1-4503-5970-2},
+ location = {Glasgow, Scotland Uk},
+ pages = {101:1--101:12},
+ articleno = {101},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/3290605.3300331},
+ doi = {10.1145/3290605.3300331},
+ acmid = {3300331},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {pointing technique, virtual reality, visual feedforward},
+} 
+```
 
 ## Usage in your Unity project
 
