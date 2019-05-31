@@ -27,6 +27,8 @@ This is a Unity Project containing the source code and prefab for the pointing t
 } 
 ```
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/J0aQtUiQJ_E/0.jpg)](https://www.youtube.com/watch?v=J0aQtUiQJ_E)
+
 ## Usage in your Unity project
 
 1. Copy the folder `Assets/RayCursor` in your assets directory.
