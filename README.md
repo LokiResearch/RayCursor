@@ -2,6 +2,10 @@
 
 This is a Unity Project containing the source code and prefab for the pointing technique RayCursor.
 
+<p align="center">
+<a href="https://youtu.be/J0aQtUiQJ_E"><img src="https://img.youtube.com/vi/J0aQtUiQJ_E/sddefault.jpg" alt="Watch the video"></a>
+</p>
+
 - If you use RayCursor for industrial purposes, please star the project and drop us a line by e-mail to tell us in which application you use it
 
 - If you use RayCursor for academic purposes, please cite: Marc Baloup, Thomas Pietrzak & Géry Casiez (2019). RayCursor: A 3D Pointing Facilitation Technique based on Raycasting. In Proceedings of CHI '19. ACM, New York, NY, USA, Paper 101, 12 pages.
@@ -28,8 +32,6 @@ This is a Unity Project containing the source code and prefab for the pointing t
  keywords = {pointing technique, virtual reality, visual feedforward},
 } 
 ```
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/J0aQtUiQJ_E/0.jpg)](https://www.youtube.com/watch?v=J0aQtUiQJ_E)
 
 ## Usage in your Unity project
 
